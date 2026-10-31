@@ -9,6 +9,14 @@
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://niri-wm.github.io/niri/Configuration:-Input
+
+// XWayland - Point X11 apps (Steam) at xwayland-satellite's display
+environment {
+    DISPLAY ":0"
+}
+
+
+
 input {
     keyboard {
         xkb {
