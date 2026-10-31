@@ -1,0 +1,52 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "margin-top": 8,
+    "margin-left": 16,
+    "margin-right": 16,
+    "spacing": 8,
+
+    "modules-left": ["niri/workspaces", "niri/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "custom/sep1", "custom/network", "custom/sep2", "battery", "tray"],
+
+    "niri/workspaces": {
+        "format": "{index}"
+    },
+    "niri/window": {
+        "max-length": 50
+    },
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "{:%A, %d %B %Y}"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 muted",
+        "format-icons": { "default": ["󰕾"] },
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+    "custom/sep1": {
+        "format": "|",
+        "tooltip": false
+    },
+    "custom/network": {
+        "exec": "~/.config/waybar/network.sh",
+        "interval": 5,
+        "tooltip": false
+    },
+    "custom/sep2": {
+        "format": "|",
+        "tooltip": false
+    },
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "states": { "warning": 25, "critical": 10 }
+    },
+    "tray": {
+        "spacing": 8
+    }
+}
